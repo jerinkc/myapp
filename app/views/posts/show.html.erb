@@ -9,8 +9,7 @@
 
 <%= form_with(model: Comment.new, url: comment_post_path(@post), method: :post) do |form| %>
   <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, class: 'comment-field' %>
   </div>
   <div>
     <%= form.submit 'Comment' %>

@@ -1,0 +1,9 @@
+.comment .time{
+  text-align: right;
+  color: grey;
+}
+
+.comment-field{
+  width: 80%;
+  height: 50px;
+}

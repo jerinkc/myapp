@@ -1,2 +1,4 @@
-<%= comment.content %>
-<%= comment.created_at.strftime('%B %d, %Y at %I:%M') %>
+<div class="comment">
+  <p class="time"><%= comment.created_at.strftime('%B %d, %Y at %I:%M') %></p>
+  <%= comment.content %>
+</div>
