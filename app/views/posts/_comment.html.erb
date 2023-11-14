@@ -1,4 +1,5 @@
 <div class="comment">
   <p class="time"><%= comment.created_at.strftime('%B %d, %Y at %I:%M') %></p>
+  <p><b><%= comment.user.email %></b></p>
   <%= comment.content %>
 </div>
