@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, except: %i[index show new create]
 
   def index
+    # TODO: Add pagination
+    # TODO: Add searching/filtering
     @posts = Post.all
   end
 
@@ -10,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    # TODO: Configure controller and view to accept new tags and select and create new tag from dropdown
     @post = Post.new
   end
 
@@ -40,6 +43,7 @@ class PostsController < ApplicationController
   end
 
   def comment
+    # Change requests and responses to AJAX
     @comment = @post.comments.build(comment_params)
 
     redirect_to post_url(@post), notice: 'Post was successfully updated.' if @comment.save
