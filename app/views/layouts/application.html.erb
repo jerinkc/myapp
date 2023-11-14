@@ -12,6 +12,7 @@
 
   <body>
     <p class="align-right">
+      <%= image_tag current_user.avatar.variant(resize_to_fit: [100, 100]), class: 'avatar' %>
       <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
     </p>
     <p class="notice banner"><%= notice %></p>
