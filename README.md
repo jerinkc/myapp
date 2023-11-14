@@ -1,24 +1,15 @@
-# README
+#### Development environment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ This commands will create the database, load the schema
 
-Things you may want to cover:
+``` bin/rails db:create ```
 
-* Ruby version
+```rake db:schema:load```
 
-* System dependencies
+#### Run application
 
-* Configuration
+Use the command
 
-* Database creation
+``` bin/rails s ```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to run the application
