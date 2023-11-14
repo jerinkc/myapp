@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_post, except: %i[index show new create]
 
   def index
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @post = Post.includes(:comments).find(params[:id])
+  end
 
   def new
     @post = Post.new
@@ -37,6 +39,12 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
+  def comment
+    @comment = @post.comments.build(comment_params)
+
+    redirect_to post_url(@post), notice: 'Post was successfully updated.' if @comment.save
+  end
+
   private
 
   def set_post
@@ -45,5 +53,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :description, :tags)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content).merge(user_id: current_user.id)
   end
 end
