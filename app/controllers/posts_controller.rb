@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      render :show
+      redirect_to post_url(@post), notice: 'Post was successfully updated.'
     else
       render :new
     end

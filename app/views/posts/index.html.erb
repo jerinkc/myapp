@@ -4,9 +4,12 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%= link_to "Show this post", post.title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= truncate(sanitize post.description.body.to_plain_text, length: 200) %>
     </p>
   <% end %>
 </div>
